@@ -1,7 +1,7 @@
-
 .data
 a: .word 1, 2, 3, 4, 5
 b: .word 6, 7, 8, 9, 10
+newline: .string "The dot product is: "
 
 .text
 main:
@@ -29,6 +29,10 @@ loop1:
     j loop1
     
 exit1:
+    addi a0, x0, 4
+    la a1, newline
+    ecall
+    
     addi a0, x0, 1
     add a1, x0, x6
     ecall
